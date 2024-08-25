@@ -25,7 +25,7 @@
   <rosparam command="load" file="$(find neonavigation_launch)/config/navigate.yaml"/>
 
   <node pkg="costmap_cspace" type="costmap_3d" name="costmap_3d" output="$(arg output_info)" >
-    <rosparam param="footprint" if="$(arg simulate)">[[0.4, -0.4], [0.4, 0.4], [-0.4, 0.4], [-0.4, -0.4]]</rosparam>
+    <rosparam param="footprint" if="$(arg simulate)">[[20, -20], [20, 20], [-20, 20], [-20, -20]]</rosparam>
   </node>
   <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)" if="$(arg use_map_server)" />
 
@@ -52,7 +52,7 @@
   <node pkg="safety_limiter" type="safety_limiter" name="safety_limiter" if="$(arg use_safety_limiter)" output="screen">
     <remap from="cmd_vel_in" to="cmd_vel_raw" />
     <remap from="cmd_vel" to="$(arg cmd_vel_output)" />
-    <rosparam param="footprint" if="$(arg simulate)">[[0.4, -0.4], [0.4, 0.4], [-0.4, 0.4], [-0.4, -0.4]]</rosparam>
+    <rosparam param="footprint" if="$(arg simulate)">[[20, -20], [20, 20], [-20, 20], [-20, -20]]</rosparam>
     <param name="allow_empty_cloud" value="true" />
     <param name="watchdog_interval" value="0.0" />
   </node>
