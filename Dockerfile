@@ -21,7 +21,7 @@ WORKDIR /home/ubuntu
 RUN mkdir -p /home/ubuntu/catkin_ws/src
 
 WORKDIR /home/ubuntu/catkin_ws/src
-RUN git clone https://github.com/at-wat/neonavigation.git && \
+RUN git clone https://github.com/suke-toudara/neonavigation.git && \
     git clone https://github.com/at-wat/neonavigation_msgs.git && \
     git clone https://github.com/at-wat/neonavigation_rviz_plugins.git
 
@@ -43,8 +43,6 @@ RUN echo "source /opt/ros/noetic/setup.bash" >> /home/ubuntu/.bashrc && \
 
 # 作業ディレクトリを設定
 WORKDIR /home/ubuntu
-COPY ./neonavigation_launch/map/1.png /home/ubuntu/catkin_ws/src/neonavigation/neonavigation_launch/map/1.png
-COPY ./neonavigation_launch/map/1_local.png /home/ubuntu/catkin_ws/src/neonavigation/neonavigation_launch/map/1_local.png
 
 # エントリーポイントを設定（オプション）
 CMD ["/bin/bash"]
