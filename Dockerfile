@@ -21,9 +21,10 @@ WORKDIR /home/ubuntu
 RUN mkdir -p /home/ubuntu/catkin_ws/src
 
 WORKDIR /home/ubuntu/catkin_ws/src
-RUN git clone https://github.com/at-wat/neonavigation_msgs.git && \
-    git clone https://github.com/suke-toudara/neonavigation.git && \           
-    git clone https://github.com/at-wat/neonavigation_rviz_plugins.git
+RUN git clone https://github.com/at-wat/neonavigation_rviz_plugins.git &&\
+    git clone https://github.com/suke-toudara/neonavigation.git && \
+    git clone https://github.com/at-wat/neonavigation_msgs.git 
+    
 
 WORKDIR /home/ubuntu/catkin_ws
 
